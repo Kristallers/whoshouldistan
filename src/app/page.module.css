@@ -1,0 +1,45 @@
+.headerContainer {
+	text-align: center;
+}
+
+.subParagraph {
+	font-size: 24px;
+}
+
+.getStartedContainer {
+	text-align: center;
+	margin: 4rem;
+}
+
+.getStartedContainer .buttonContainer {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 3rem;
+}
+.buttonContainer button {
+	position: relative;
+	z-index: 1;
+	font-size: 20px;
+	width: 15rem;
+	height: 3.5rem;
+	margin: 1.5rem;
+	border-radius: 32px;
+	border-style: none;
+	background-color: #ffffff;
+	box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.25);
+}
+
+.buttonContainer .buttonShadowContainer {
+	position: relative;
+}
+
+.buttonShadowContainer .buttonShadow {
+	width: 15rem;
+	height: 3.5rem;
+	margin: 1.5rem;
+	border-radius: 32px;
+	background-color: black;
+	position: absolute;
+	top: 0;
+}
