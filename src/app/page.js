@@ -73,7 +73,7 @@ export default function Home() {
 						=
 					</div>
 					<div className={styles.buttonShadowContainer}>
-						<Link href="/girl group" query>
+						<Link href="/girlgroup">
 							<button
 								className="button"
 								onMouseEnter={onEnter}
