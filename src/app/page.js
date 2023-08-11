@@ -1,5 +1,5 @@
 "use client";
-import styles from "./page.module.css";
+import styles from "./styles/page.module.css";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Link from "next/link";
