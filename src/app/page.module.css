@@ -1,5 +1,6 @@
 .headerContainer {
 	text-align: center;
+	margin: 3.5rem;
 }
 
 .subParagraph {
@@ -28,6 +29,12 @@
 	border-style: none;
 	background-color: #ffffff;
 	box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+}
+
+.buttonContainer Link {
+	text-decoration: none;
+	color: inherit;
 }
 
 .buttonContainer .buttonShadowContainer {
@@ -42,4 +49,48 @@
 	background-color: black;
 	position: absolute;
 	top: 0;
+}
+
+@media screen and (max-width: 600px) {
+	.headerContainer {
+		margin: 3rem;
+	}
+	.headerContainer h1 {
+		font-size: 48px;
+	}
+
+	.subParagraph {
+		font-size: 20px;
+	}
+
+	.getStartedContainer h2 {
+		font-size: 40px;
+	}
+}
+
+@media screen and (max-width: 340px) {
+	.headerContainer {
+		margin: 3rem 2rem;
+	}
+	.headerContainer h1 {
+		font-size: 40px;
+	}
+
+	.subParagraph {
+		font-size: 18px;
+	}
+	.getStartedContainer {
+		margin: 2rem;
+	}
+	.getStartedContainer h2 {
+		font-size: 36px;
+	}
+
+	.buttonContainer button {
+		width: 12rem;
+	}
+
+	.buttonShadowContainer .buttonShadow {
+		width: 12rem;
+	}
 }

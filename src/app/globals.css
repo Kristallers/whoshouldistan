@@ -18,11 +18,13 @@ body {
 h1 {
 	font-family: "Racing Sans One", cursive;
 	font-size: 96px;
+	text-align: center;
 }
 
 h2 {
 	font-family: "Racing Sans One", cursive;
 	font-size: 64px;
+	text-align: center;
 }
 
 .mainDiv {
@@ -46,6 +48,19 @@ h2 {
 
 footer {
 	position: absolute;
-	bottom: 1.8rem;
+	bottom: 0;
+	margin: 1.8rem;
 	color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+	footer {
+		margin: 1rem;
+	}
+}
+
+@media screen and (max-width: 340px) {
+	footer {
+		font-size: 0.8rem;
+	}
 }
