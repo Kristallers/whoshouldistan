@@ -1,19 +1,28 @@
 "use client";
-import Image from "next/image";
 import styles from "./page.module.css";
 import { useEffect, useRef } from "react";
-import { gsap, Power3 } from "gsap";
+import { gsap } from "gsap";
+import Link from "next/link";
 
 export default function Home() {
 	const buttonRef = useRef(null);
 	// const comp = useRef();
+	let result = null;
 
 	const onEnter = ({ currentTarget }) => {
+		console.log(currentTarget.textContent);
 		gsap.to(currentTarget, { y: -20 });
+		result = currentTarget.textContent;
 	};
 
 	const onLeave = ({ currentTarget }) => {
 		gsap.to(currentTarget, { y: 0 });
+		result = null;
+	};
+
+	const onClickButton = (event) => {
+		console.log("firing", event);
+		console.log("result", result);
 	};
 
 	// useEffect(() => {
@@ -37,7 +46,7 @@ export default function Home() {
 	return (
 		<>
 			<div className={styles.headerContainer}>
-				<h1>WHO SHOULD I STAN</h1>
+				<h1>WHO SHOULD I STAN?</h1>
 				<p className={styles.subParagraph}>
 					Your website to discover yet another k-pop idol to ruin your life, and
 					wallet
@@ -50,45 +59,55 @@ export default function Home() {
 				</p>
 				<div className={styles.buttonContainer}>
 					<div className={styles.buttonShadowContainer}>
-						<button
-							ref={buttonRef}
-							className="button"
-							onMouseEnter={onEnter}
-							onMouseLeave={onLeave}
-						>
-							song
-						</button>
-						<div className={styles.buttonShadow}></div>
+						<Link href="/song">
+							<button
+								ref={buttonRef}
+								className="button"
+								onMouseEnter={onEnter}
+								onMouseLeave={onLeave}
+							>
+								song
+							</button>
+							<div className={styles.buttonShadow}></div>
+						</Link>
+						=
 					</div>
 					<div className={styles.buttonShadowContainer}>
-						<button
-							className="button"
-							onMouseEnter={onEnter}
-							onMouseLeave={onLeave}
-						>
-							girl group
-						</button>
-						<div className={styles.buttonShadow}></div>
+						<Link href="/girl group" query>
+							<button
+								className="button"
+								onMouseEnter={onEnter}
+								onMouseLeave={onLeave}
+							>
+								girl group
+							</button>
+							<div className={styles.buttonShadow}></div>
+						</Link>
 					</div>
 					<div className={styles.buttonShadowContainer}>
-						<button
-							className="button"
-							onMouseEnter={onEnter}
-							onMouseLeave={onLeave}
-						>
-							solo artist
-						</button>
-						<div className={styles.buttonShadow}></div>
+						<Link onClick={onClickButton} href="/soloartist">
+							<button
+								className="button"
+								onMouseEnter={onEnter}
+								onMouseLeave={onLeave}
+							>
+								solo artist
+							</button>
+							<div className={styles.buttonShadow}></div>
+						</Link>
 					</div>
 					<div className={styles.buttonShadowContainer}>
-						<button
-							className="button"
-							onMouseEnter={onEnter}
-							onMouseLeave={onLeave}
-						>
-							boy group
-						</button>
-						<div className={styles.buttonShadow}></div>
+						<Link onClick={onClickButton} href="/boygroup">
+							<button
+								className="button"
+								onMouseEnter={onEnter}
+								onMouseLeave={onLeave}
+								ref={buttonRef}
+							>
+								boy group
+							</button>
+							<div className={styles.buttonShadow}></div>
+						</Link>
 					</div>
 				</div>
 			</div>
