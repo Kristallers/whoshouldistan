@@ -9,6 +9,7 @@ const Song = () => {
       <h2>You get to listen to</h2>
       <h1>{song}</h1>
       <img src={link} />
+      <p>this is an image</p>
     </>
   );
 };
